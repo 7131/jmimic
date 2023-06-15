@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" type="text/css" href="./default.css">
+<script src="https://7131.github.io/jmotion/v10/jmotion.js"></script>
+<script src="./jugglemaster.js"></script>
+<title>JuggleMaster style</title>
+</head>
+
+<body>
+<article>
+<h1>JuggleMaster style</h1>
+
+<div>
+  <input type="text" id="pattern" value="5">
+  <button id="start">Start</button>
+</div>
+<div>
+  <svg id="board">
+    <defs>
+      <path id="shape_right_hand" d="M -10,-5 h 5 v 4 l 1,1 h 14 v 5 h -18 l -2,-2 z" />
+      <path id="shape_left_hand" d="M 10,-5 h -5 v 4 l -1,1 h -14 v 5 h 18 l 2,-2 z" />
+      <g>
+        <use id="shape_right_use" href="#shape_right_hand" x="-90" y="10" />
+        <line id="shape_right_0" x1="-100" y1="10" x2="-100" y2="-10" />
+        <line id="shape_right_1" x1="-100" y1="-10" x2="-70" y2="-80" />
+        <line id="shape_right_2" x1="-70" y1="-80" x2="-50" y2="-95" />
+        <line id="shape_right_3" x1="-50" y1="-95" x2="-10" y2="-95" />
+        <line id="shape_right_4" x1="-10" y1="-95" x2="-8" y2="-100" />
+      </g>
+      <g>
+        <use id="shape_left_use" href="#shape_left_hand" x="90" y="10" />
+        <line id="shape_left_0" x1="100" y1="10" x2="100" y2="-10" />
+        <line id="shape_left_1" x1="100" y1="-10" x2="70" y2="-80" />
+        <line id="shape_left_2" x1="70" y1="-80" x2="50" y2="-95" />
+        <line id="shape_left_3" x1="50" y1="-95" x2="10" y2="-95" />
+        <line id="shape_left_4" x1="10" y1="-95" x2="8" y2="-100" />
+      </g>
+      <g>
+        <path id="orbit_right_00" d="M -100,10 c 0,40 60,40 60,0" />
+        <path id="orbit_right_10" d="M -100,-10 c 0,25 30,25 30,0" />
+        <path id="orbit_right_20" d="M -70,-80 c 0,10 10,10 10,0" />
+        <path id="orbit_right_30" d="M -50,-95 c 0,5 0,5 0,0" />
+        <path id="orbit_right_40" d="M -10,-95 c 0,2 0,2 0,0" />
+        <path id="orbit_right_01" d="M -40,10 c 0,-20 -60,-20 -60,0" />
+        <path id="orbit_right_11" d="M -70,-10 c 0,-10 -30,-10 -30,0" />
+        <path id="orbit_right_21" d="M -60,-80 c 0,-5 -10,-5 -10,0" />
+        <path id="orbit_right_31" d="M -50,-95 c 0,-2 0,-2 0,0" />
+        <path id="orbit_right_41" d="M -10,-95 c 0,-1 0,-1 0,0" />
+      </g>
+      <g>
+        <path id="orbit_left_00" d="M 100,10 c 0,40 -60,40 -60,0" />
+        <path id="orbit_left_10" d="M 100,-10 c 0,25 -30,25 -30,0" />
+        <path id="orbit_left_20" d="M 70,-80 c 0,10 -10,10 -10,0" />
+        <path id="orbit_left_30" d="M 50,-95 c 0,5 0,5 0,0" />
+        <path id="orbit_left_40" d="M 10,-95 c 0,2 0,2 0,0" />
+        <path id="orbit_left_01" d="M 40,10 c 0,-20 60,-20 60,0" />
+        <path id="orbit_left_11" d="M 70,-10 c 0,-10 30,-10 30,0" />
+        <path id="orbit_left_21" d="M 60,-80 c 0,-5 10,-5 10,0" />
+        <path id="orbit_left_31" d="M 50,-95 c 0,-2 0,-2 0,0" />
+        <path id="orbit_left_41" d="M 10,-95 c 0,-1 0,-1 0,0" />
+      </g>
+    </defs>
+  </svg>
+</div>
+<div>
+  <button id="stop">Stop</button>
+  <button id="restart">Restart</button>
+</div>
+
+<footer>
+  <p><a href="./index.html">Impersonators top page</a></p>
+  <p><a href="https://7131.github.io/jmotion/">jmotion top page</a></p>
+</footer>
+</article>
+</body>
+
+</html>

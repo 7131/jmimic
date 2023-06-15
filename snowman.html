@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" type="text/css" href="./default.css">
+<script src="https://7131.github.io/jmotion/v10/jmotion.js"></script>
+<script src="./snowman.js"></script>
+<title>The snowman style</title>
+</head>
+
+<body>
+<article>
+<h1>The snowman style</h1>
+
+<div>
+  <input type="text" id="pattern" value="5">
+  <button id="start">Start</button>
+</div>
+<div>
+  <svg id="board">
+    <defs>
+      <g id="shape_body" stroke="black">
+        <path d="M -27,45 c 8,-10 15,-13 20,0 z" fill="blue" />
+        <path d="M 35,45 c -2,-12 -25,-13 -25,0 z" fill="blue" />
+        <path d="M -45,10 c 0,28 40,28 45,28 s 45,0 45,-28 s -40,-28 -45,-28 s -45,0 -45,28 z" fill="white" />
+        <path d="M -30,-42 c 0,24 26,24 30,24 s 30,0 30,-24 s -26,-24 -30,-24 s -30,0 -30,24 z" fill="white" />
+        <path d="M -27,-54 c 7,2 35,-7 35,-12 l -10,-20 c -5,-8 -35,5 -30,10 z" fill="blue" />
+        <ellipse cx="-8" cy="-42" rx="2" ry="5" />
+        <ellipse cx="8" cy="-42" rx="2" ry="5" />
+      </g>
+      <g>
+        <line id="shape_right_0" x1="-65" y1="8" x2="-50" y2="20" stroke="black" />
+        <line id="shape_right_1" x1="-50" y1="20" x2="-35" y2="3" stroke="black" />
+        <line id="shape_left_0" x1="65" y1="8" x2="50" y2="20" stroke="black" />
+        <line id="shape_left_1" x1="50" y1="20" x2="35" y2="3" stroke="black" />
+      </g>
+      <g>
+        <path id="orbit_right_00" d="M -65,8 c 0,30 50,30 50,0" />
+        <path id="orbit_right_10" d="M -50,20 c 0,15 30,15 30,0" />
+        <path id="orbit_left_00" d="M 65,8 c 0,30 -50,30 -50,0" />
+        <path id="orbit_left_10" d="M 50,20 c 0,15 -30,15 -30,0" />
+      </g>
+      <g>
+        <path id="orbit_right_01" d="M -15,8 c 0,-36 -50,-36 -50,0" />
+        <path id="orbit_right_11" d="M -20,20 c 0,-18 -30,-18 -30,0" />
+        <path id="orbit_left_01" d="M 15,8 c 0,-36 50,-36 50,0" />
+        <path id="orbit_left_11" d="M 20,20 c 0,-18 30,-18 30,0" />
+      </g>
+    </defs>
+  </svg>
+</div>
+<div>
+  <button id="stop">Stop</button>
+  <button id="restart">Restart</button>
+</div>
+
+<footer>
+  <p><a href="./index.html">Impersonators top page</a></p>
+  <p><a href="https://7131.github.io/jmotion/">jmotion top page</a></p>
+</footer>
+</article>
+</body>
+
+</html>

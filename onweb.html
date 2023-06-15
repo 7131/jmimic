@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" type="text/css" href="./default.css">
+<script src="https://7131.github.io/jmotion/v10/jmotion.js"></script>
+<script src="./onweb.js"></script>
+<title>Siteswap animation on WEB style</title>
+</head>
+
+<body>
+<article>
+<h1>Siteswap animation on WEB style</h1>
+
+<div>
+  <input type="text" id="pattern" value="5">
+  <button id="start">Start</button>
+</div>
+<div>
+  <svg id="board">
+    <defs>
+      <g id="shape_head" stroke="black">
+        <circle r="20" fill="white" />
+        <path d="M -30,-10 c 0,20 60,10 60,-5 c 0,-20 -60,-10 -60,5" fill="black" />
+        <path d="M -20,-20 c 0,16 40, 8 40,-4 v -10 c 0,-16 -40, -8 -40,4 z" fill="black" />
+      </g>
+      <g id="shape_right_hand" stroke="black" fill="silver">
+        <path d="M -12,5 c 0,5 15,10 15,5 l 0,-1 l 1,-4 l 8,1 c 4,0 4,-6 1,-6 l -7,-1 l 4,-10 c 2,-5 -6,-7 -7,-2 l -2,7 l -1,-10 c 0,-5 -7,-5 -7,0 l 1,7 l -4,-5 c -4,-2 -7,3 -3,6 l 3,3 c -1,2 -1,7 -1,8 z" stroke-linejoin="round" />
+      </g>
+      <use id="shape_left_hand" href="#shape_right_hand" transform="scale(-1,1)" />
+      <circle id="shape_ball" r="10" stroke="black" fill="dodgerblue" />
+    </defs>
+    <use id="shape_head_use" href="#shape_head" x="0" y="-120" />
+    <use id="shape_right_use" href="#shape_right_hand" x="-50" y="0" />
+    <use id="shape_left_use" href="#shape_left_hand" x="50" y="0" />
+  </svg>
+</div>
+<div>
+  <button id="stop">Stop</button>
+  <button id="restart">Restart</button>
+</div>
+
+<footer>
+  <p><a href="./index.html">Impersonators top page</a></p>
+  <p><a href="https://7131.github.io/jmotion/">jmotion top page</a></p>
+</footer>
+</article>
+</body>
+
+</html>

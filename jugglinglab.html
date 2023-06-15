@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" type="text/css" href="./default.css">
+<script src="https://7131.github.io/jmotion/v10/jmotion.js"></script>
+<script src="./jugglinglab.js"></script>
+<title>Juggling Lab style</title>
+</head>
+
+<body>
+<article>
+<h1>Juggling Lab style</h1>
+
+<div>
+  <input type="text" id="pattern" value="5">
+  <button id="start">Start</button>
+</div>
+<div>
+  <svg id="board">
+    <defs>
+      <ellipse id="shape_head" cx="0" cy="-130" rx="25" ry="30" stroke="black" fill="none" />
+      <path id="shape_body" d="M -50,-90 h 100 l -10,90 h -80 z" stroke="black" fill="none" />
+      <g>
+        <line id="shape_right_0" x1="-90" y1="20" x2="-50" y2="-25" stroke="black" />
+        <line id="shape_right_1" x1="-50" y1="-25" x2="-50" y2="-90" stroke="black" />
+        <line id="shape_left_0" x1="90" y1="20" x2="50" y2="-25" stroke="black" />
+        <line id="shape_left_1" x1="50" y1="-25" x2="50" y2="-90" stroke="black" />
+      </g>
+      <g>
+        <path id="orbit_right_00" d="M -90,20 c 0,24 50,4 50,-20" />
+        <path id="orbit_right_10" d="M -50,-25 c 0,2 -10,2 -10,0" />
+        <path id="orbit_left_00" d="M 90,20 c 0,24 -50,4 -50,-20" />
+        <path id="orbit_left_10" d="M 50,-25 c 0,2 10,2 10,0" />
+      </g>
+      <g>
+        <path id="orbit_right_01" d="M -40,0 c 0,-24 -50,-4 -50,20" />
+        <path id="orbit_right_11" d="M -60,-25 c 0,-2 10,-2 10,0" />
+        <path id="orbit_left_01" d="M 40,0 c 0,-24 50,-4 50,20" />
+        <path id="orbit_left_11" d="M 60,-25 c 0,-2 -10,-2 -10,0" />
+      </g>
+    </defs>
+  </svg>
+</div>
+<div>
+  <button id="stop">Stop</button>
+  <button id="restart">Restart</button>
+</div>
+
+<footer>
+  <p><a href="./index.html">Impersonators top page</a></p>
+  <p><a href="https://7131.github.io/jmotion/">jmotion top page</a></p>
+</footer>
+</article>
+</body>
+
+</html>
