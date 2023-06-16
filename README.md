@@ -1,6 +1,6 @@
 # Juggling Simulator Impersonators
 
-These are simulator examples using [jmotion](https://7131.github.io/jmotion/v10/jmotion.js).
+These are simulator examples using [jmotion](https://github.com/7131/jmotion).
 
 # File list
 
