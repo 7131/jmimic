@@ -1,6 +1,6 @@
 // Controller class
 const Controller = function() {
-    window.addEventListener("load", this._initialize.bind(this), false);
+    window.addEventListener("load", this._initialize.bind(this));
 }
 
 // Controller prototype
@@ -20,9 +20,9 @@ Controller.prototype = {
         this._setStatus();
 
         // button events
-        this._startButton.addEventListener("click", this._start.bind(this), false);
-        this._stopButton.addEventListener("click", this._stop.bind(this), false);
-        this._restartButton.addEventListener("click", this._restart.bind(this), false);
+        this._startButton.addEventListener("click", this._start.bind(this));
+        this._stopButton.addEventListener("click", this._stop.bind(this));
+        this._restartButton.addEventListener("click", this._restart.bind(this));
     },
 
     // "Start" button process
