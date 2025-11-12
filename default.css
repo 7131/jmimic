@@ -1,7 +1,8 @@
 @charset "utf-8";
 
-main {
+body {
     line-height: 1.8;
+    margin-bottom: 10ex;
 }
 
 dl dt {
@@ -34,12 +35,12 @@ svg.small {
 }
 
 footer {
-    margin: 5ex 0ex 10ex;
+    margin-top: 5ex;
 }
 
 @media (orientation: landscape) {
 
-    main {
+    body {
         line-height: 1.5;
     }
 
