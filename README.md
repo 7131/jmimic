@@ -1,6 +1,7 @@
 # Juggling Simulator Impersonators
 
-https://7131.github.io/jmimic/
+English site: https://7131.github.io/jmimic/<br>
+Japanese site: https://app.7131.jp/jmimic/
 
 These are simulator examples using the [jmotion](https://github.com/7131/jmotion/) library.
 With the jmotion, anyone can create original juggling simulators.
