@@ -1,50 +1,57 @@
 // Controller class
-const Controller = function() {
-    window.addEventListener("load", this._initialize.bind(this));
-}
+class Controller {
+    #facade;
+    #pattern;
+    #startButton;
+    #stopButton;
+    #restartButton;
+    #arms;
+    #weight;
 
-// Controller prototype
-Controller.prototype = {
+    // constructor
+    constructor() {
+        window.addEventListener("load", this.#initialize.bind(this));
+    }
 
     // initialize the private fields
-    "_initialize": function(e) {
+    #initialize(e) {
         // DOM elements
-        this._facade = new jmotion.Facade("#board");
-        this._pattern = document.getElementById("pattern");
-        this._startButton = document.getElementById("start");
-        this._stopButton = document.getElementById("stop");
-        this._restartButton = document.getElementById("restart");
+        this.#facade = new jmotion.Facade("#board");
+        this.#pattern = document.getElementById("pattern");
+        this.#startButton = document.getElementById("start");
+        this.#stopButton = document.getElementById("stop");
+        this.#restartButton = document.getElementById("restart");
 
         // control settings
-        this._setShapes(this._facade);
-        this._setStatus();
+        this.#setShapes(this.#facade);
+        this.#setStatus();
 
         // button events
-        this._startButton.addEventListener("click", this._start.bind(this));
-        this._stopButton.addEventListener("click", this._stop.bind(this));
-        this._restartButton.addEventListener("click", this._restart.bind(this));
-    },
+        this.#startButton.addEventListener("click", this.#start.bind(this));
+        this.#stopButton.addEventListener("click", this.#stop.bind(this));
+        this.#restartButton.addEventListener("click", this.#restart.bind(this));
+    }
 
     // "Start" button process
-    "_start": function(e) {
-        this._facade.startJuggling(this._pattern.value);
-        this._setStatus();
-    },
+    #start(e) {
+        this.#facade.startJuggling(this.#pattern.value);
+        this.#setStatus();
+    }
 
     // "Stop" button process
-    "_stop": function(e) {
-        this._facade.stopJuggling();
-        this._setStatus();
-    },
+    #stop(e) {
+        this.#facade.stopJuggling();
+        this.#setStatus();
+    }
 
     // "Restart" button process
-    "_restart": function(e) {
-        this._facade.startJuggling();
-        this._setStatus();
-    },
+    #restart(e) {
+        this.#facade.startJuggling();
+        this.#setStatus();
+    }
 
     // set the shapes
-    "_setShapes": function(facade) {
+    #setShapes(facade) {
         // body
         const body = [
             document.getElementById("shape_head"),
@@ -52,21 +59,21 @@ Controller.prototype = {
         ];
 
         // arms
-        this._arms = [
+        this.#arms = [
             document.getElementById("shape_right_lower"),
             document.getElementById("shape_right_upper"),
             document.getElementById("shape_left_lower"),
             document.getElementById("shape_left_upper"),
         ];
-        this._weight = parseInt(this._arms[0].getAttribute("stroke-width"), 10) || 1;
+        this.#weight = parseInt(this.#arms[0].getAttribute("stroke-width"), 10) || 1;
         const arms = [
             [
-                this._arms[0],
-                this._arms[1],
+                this.#arms[0],
+                this.#arms[1],
             ],
             [
-                this._arms[2],
-                this._arms[3],
+                this.#arms[2],
+                this.#arms[3],
             ],
         ];
 
@@ -108,21 +115,21 @@ Controller.prototype = {
         facade.creator.paths.left = left;
         const balls = Array.from(facade.animator.core.defs.children).filter(elem => elem instanceof SVGCircleElement);
         balls.forEach(elem => elem.setAttribute("r", 20));
-    },
+    }
 
     // set the status
-    "_setStatus": function() {
+    #setStatus() {
         // buttons
-        const status = this._facade.animator.getStatus();
+        const status = this.#facade.animator.getStatus();
         const running = status.running;
         const runnable = running || !status.runnable;
-        this._startButton.disabled = running;
-        this._stopButton.disabled = !running;
-        this._restartButton.disabled = runnable;
+        this.#startButton.disabled = running;
+        this.#stopButton.disabled = !running;
+        this.#restartButton.disabled = runnable;
 
         // arm thickness
-        this._arms.forEach(elem => elem.setAttribute("stroke-width", this._weight));
-    },
+        this.#arms.forEach(elem => elem.setAttribute("stroke-width", this.#weight));
+    }
 
 }
 

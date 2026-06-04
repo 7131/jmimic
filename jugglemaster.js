@@ -1,50 +1,55 @@
 // Controller class
-const Controller = function() {
-    window.addEventListener("load", this._initialize.bind(this));
-}
+class Controller {
+    #facade;
+    #pattern;
+    #startButton;
+    #stopButton;
+    #restartButton;
 
-// Controller prototype
-Controller.prototype = {
+    // constructor
+    constructor() {
+        window.addEventListener("load", this.#initialize.bind(this));
+    }
 
     // initialize the private fields
-    "_initialize": function(e) {
+    #initialize(e) {
         // DOM elements
-        this._facade = new jmotion.Facade("#board");
-        this._pattern = document.getElementById("pattern");
-        this._startButton = document.getElementById("start");
-        this._stopButton = document.getElementById("stop");
-        this._restartButton = document.getElementById("restart");
+        this.#facade = new jmotion.Facade("#board");
+        this.#pattern = document.getElementById("pattern");
+        this.#startButton = document.getElementById("start");
+        this.#stopButton = document.getElementById("stop");
+        this.#restartButton = document.getElementById("restart");
 
         // control settings
-        this._setShapes(this._facade);
-        this._setStatus();
+        this.#setShapes(this.#facade);
+        this.#setStatus();
 
         // button events
-        this._startButton.addEventListener("click", this._start.bind(this));
-        this._stopButton.addEventListener("click", this._stop.bind(this));
-        this._restartButton.addEventListener("click", this._restart.bind(this));
-    },
+        this.#startButton.addEventListener("click", this.#start.bind(this));
+        this.#stopButton.addEventListener("click", this.#stop.bind(this));
+        this.#restartButton.addEventListener("click", this.#restart.bind(this));
+    }
 
     // "Start" button process
-    "_start": function(e) {
-        this._facade.startJuggling(this._pattern.value);
-        this._setStatus();
-    },
+    #start(e) {
+        this.#facade.startJuggling(this.#pattern.value);
+        this.#setStatus();
+    }
 
     // "Stop" button process
-    "_stop": function(e) {
-        this._facade.stopJuggling();
-        this._setStatus();
-    },
+    #stop(e) {
+        this.#facade.stopJuggling();
+        this.#setStatus();
+    }
 
     // "Restart" button process
-    "_restart": function(e) {
-        this._facade.startJuggling();
-        this._setStatus();
-    },
+    #restart(e) {
+        this.#facade.startJuggling();
+        this.#setStatus();
+    }
 
     // set the shapes
-    "_setShapes": function(facade) {
+    #setShapes(facade) {
         // body
         const body = [
             document.getElementById("board_head"),
@@ -117,18 +122,18 @@ Controller.prototype = {
         facade.creator.offset.left = { "x": -3, "y": -10 };
         facade.creator.paths.right = right;
         facade.creator.paths.left = left;
-    },
+    }
 
     // set the status
-    "_setStatus": function() {
+    #setStatus() {
         // buttons
-        const status = this._facade.animator.getStatus();
+        const status = this.#facade.animator.getStatus();
         const running = status.running;
         const runnable = running || !status.runnable;
-        this._startButton.disabled = running;
-        this._stopButton.disabled = !running;
-        this._restartButton.disabled = runnable;
-    },
+        this.#startButton.disabled = running;
+        this.#stopButton.disabled = !running;
+        this.#restartButton.disabled = runnable;
+    }
 
 }
 
