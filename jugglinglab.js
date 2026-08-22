@@ -99,15 +99,14 @@ class Controller {
         facade.animator.core.setBody(body);
         facade.animator.core.setArms(arms);
         facade.animator.core.setHands([]);
-        facade.animator.core.setProps(props);
-        facade.creator.paths.right = right;
-        facade.creator.paths.left = left;
+        facade.animator.core.props = props;
+        facade.generator.paths.right = right;
+        facade.generator.paths.left = left;
     }
 
     // set the status
     #setStatus() {
-        // buttons
-        const status = this.#facade.animator.getStatus();
+        const status = this.#facade.animator.status;
         const running = status.running;
         const runnable = running || !status.runnable;
         this.#startButton.disabled = running;

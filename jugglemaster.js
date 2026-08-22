@@ -118,16 +118,15 @@ class Controller {
         facade.animator.core.setArms(arms);
         facade.animator.core.setHands(hands);
         facade.animator.core.setStyle({ "stroke": "black", "fill": "white" });
-        facade.creator.offset.right = { "x": 3, "y": -10 };
-        facade.creator.offset.left = { "x": -3, "y": -10 };
-        facade.creator.paths.right = right;
-        facade.creator.paths.left = left;
+        facade.generator.offset.right = { "x": 13, "y": -12 };
+        facade.generator.offset.left = { "x": -13, "y": -12 };
+        facade.generator.paths.right = right;
+        facade.generator.paths.left = left;
     }
 
     // set the status
     #setStatus() {
-        // buttons
-        const status = this.#facade.animator.getStatus();
+        const status = this.#facade.animator.status;
         const running = status.running;
         const runnable = running || !status.runnable;
         this.#startButton.disabled = running;

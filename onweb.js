@@ -70,15 +70,14 @@ class Controller {
         facade.animator.core.setBody(body);
         facade.animator.core.setArms([]);
         facade.animator.core.setHands(hands);
-        facade.animator.core.setProps(props);
-        facade.creator.offset.right = { "x": 5, "y": -10 };
-        facade.creator.offset.left = { "x": -5, "y": -10 };
+        facade.animator.core.props = props;
+        facade.generator.offset.right = { "x": 5, "y": -10 };
+        facade.generator.offset.left = { "x": -5, "y": -10 };
     }
 
     // set the status
     #setStatus() {
-        // buttons
-        const status = this.#facade.animator.getStatus();
+        const status = this.#facade.animator.status;
         const running = status.running;
         const runnable = running || !status.runnable;
         this.#startButton.disabled = running;

@@ -54,8 +54,7 @@ class Controller {
 
     // set the status
     #setStatus() {
-        // buttons
-        const status = this.#facade.animator.getStatus();
+        const status = this.#facade.animator.status;
         const running = status.running;
         const runnable = running || !status.runnable;
         this.#startButton.disabled = running;
